@@ -1,0 +1,36 @@
+---
+// Components
+import FeatureCard from './ui/FeatureCard.astro';
+
+// Data
+import data from '../data/data.json'
+
+// Images
+import Access from '../assets/access-anywhere.svg';
+import Security from '../assets/security.svg';
+import Collaboration from '../assets/collaboration.svg';
+import File from '../assets/any-file.svg';
+
+const { features } = data;
+const featureImage = {
+  'access-anywhere.svg': Access,
+  'security.svg': Security,
+  'collaboration.svg': Collaboration,
+  'any-file.svg': File,
+}
+---
+
+<section id="feature" class="max-w-[900px] mx-auto my-20">
+  <div class="container grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24">
+    {
+      features.map((feature) => (
+        <FeatureCard
+          image={featureImage[feature.image as keyof typeof featureImage]}
+          imageAltText={feature.imageAltText}
+          title={feature.title}
+          description={feature.description}
+        />
+      ))
+    }
+  </div>
+</section>

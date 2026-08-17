@@ -1,0 +1,151 @@
+---
+const navItems = [
+  { name: "Features", href: "#feature" },
+  {
+    name: "Solutions",
+    href: "/",
+    children: [
+      { name: "Marketing", href: "#marketing" },
+      { name: "Analytics", href: "#analytics" },
+      { name: "Automation", href: "#automation" },
+    ],
+  },
+  { name: "Pricing", href: "#pricing" },
+  {
+    name: "Resources",
+    href: "/",
+    children: [
+      { name: "Docs", href: "#docs" },
+      { name: "Blog", href: "#blog" },
+      { name: "Changelog", href: "#changelog" },
+    ],
+  },
+  { name: "About", href: "#about" },
+];
+
+const authItems = [
+  { name: "Login", href: "/" },
+  { name: "Get Started", href: "/" },
+];
+---
+
+<nav>
+  <ul class="flex items-center justify-center gap-12">
+    {navItems.map((item) => {
+      const hasDropdown = item.children?.length;
+
+      return (
+        <li class="relative group" data-nav-item>
+          {hasDropdown ? (
+            <>
+              <button
+                type="button"
+                class="nav-dropdown-btn inline-flex items-center justify-center gap-2 transition-colors duration-300 hover:text-slate-500"
+                aria-haspopup="menu"
+              >
+                <span class="nav-dropdown-label">{item.name}</span>
+
+                <!-- arrow -->
+                <i class="ri-arrow-down-s-line nav-dropdown-arrow"></i>
+              </button>
+
+              <!-- submenu -->
+              <ul
+                class="nav-dropdown-menu absolute left-0 top-full z-20 mt-3 w-48 rounded-lg
+                       bg-black/50 backdrop-blur p-2 shadow-lg ring-1 ring-white/10
+                       opacity-0 translate-y-2 pointer-events-none
+                       transition-all duration-300
+                       group-hover:opacity-100 group-hover:translate-y-2 group-hover:pointer-events-auto"
+              >
+                {(item.children ?? []).map((c) => (
+                  <li>
+                    <a
+                      href={c.href}
+                      class="block rounded px-3 py-2 text-sm
+                             transition-colors hover:text-slate-500 hover:bg-white/10"
+                    >
+                      {c.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <a
+              href={item.href}
+              class="transition-colors duration-300 hover:text-slate-500"
+            >
+              {item.name}
+            </a>
+          )}
+        </li>
+      );
+    })}
+  </ul>
+</nav>
+
+<div>
+  <ul class="flex items-center justify-center gap-12">
+    {authItems.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          class={
+            item.name === "Login"
+              ? "transition-colors duration-300 hover:text-slate-500"
+              : "inline-flex items-center justify-center flex-none gap-4 bg-bsecondary text-white border-0 outline-0 px-4 py-2 rounded-lg relative overflow-hidden hover:bg-bsecondary/85"
+          }
+        >
+          {item.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  (() => {
+    const dropdownItems = document.querySelectorAll('[data-nav-item]');
+    const dropdownBtns = document.querySelectorAll('.nav-dropdown-btn');
+
+    function closeAll() {
+      dropdownItems.forEach((li) => {
+        li.classList.remove('nav-open');
+        const arrow = li.querySelector('.nav-dropdown-arrow');
+        if (arrow) arrow.classList.remove('rotate-180');
+      });
+    }
+
+    dropdownBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const li = btn.closest('[data-nav-item]');
+        if (!li) return;
+
+        const arrow = li.querySelector('.nav-dropdown-arrow');
+
+        const isOpen = li.classList.contains('nav-open');
+
+        closeAll();
+        if (!isOpen) {
+          li.classList.add('nav-open');
+          if (arrow) arrow.classList.add('rotate-180');
+        }
+      });
+    });
+
+    document.addEventListener('click', () => closeAll());
+  })();
+</script>
+
+<style>
+  /* click-open active state */
+  .nav-open .nav-dropdown-menu {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+    transition: none !important;
+  }
+</style>

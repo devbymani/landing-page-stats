@@ -1,0 +1,26 @@
+---
+// Astro Image Assets
+import { Image } from "astro:assets";
+
+// Images
+import Productive from '../assets/productive-img.svg';
+---
+
+<section class="my-10 pt-20">
+  <div class="container grid grid-cols-1 md:grid-cols-2 gap-10">
+    <Image
+      src={Productive}
+      alt='Productive Image'
+      class='size-[460px] mx-auto object-contain'
+    />
+    <div class="space-y-4 md:self-center">
+      <h2 class="text-2xl md:text-3xl font-semibold">Stay Productive, wherever you are</h2>
+      <p>Never let location be an issue when accessing your files. Fyck has you covered for all of your file storage needs.</p>
+      <p>Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.</p>
+      <a href="#" class="relative flex items-center justify-start gap-2 pb-1 w-fit text-accent-200 transition-colors duration-300 hover:text-accent-200/75 after:absolute after:bottom-0 after:h-[1.5px] after:w-0 after:bg-accent-200 hover:after:w-full">
+        <span>See how Fyck works</span>
+        <i class="ri-arrow-right-circle-line"></i>
+      </a>
+    </div>
+  </div>
+</section>

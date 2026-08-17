@@ -1,0 +1,25 @@
+---
+// Astro Image Assets
+import { Image } from "astro:assets";
+
+// Astro types
+import type { ImageMetadata } from "astro";
+
+// Variables
+interface Props {
+  image: ImageMetadata,
+  imageAltText: string,
+  title: string,
+  description: string,
+}
+
+const { image, imageAltText, title, description } = Astro.props;
+---
+
+<div class="text-center mb-14 md:mb-0 space-y-4">
+  <Image src={image} alt={imageAltText} class='size-[60px] mx-auto object-contain' />
+  <div class="space-y-2">
+    <h2 class="font-semibold text-xl">{title}</h2>
+    <p>{description}</p>
+  </div>
+</div>

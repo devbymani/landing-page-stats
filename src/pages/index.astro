@@ -1,17 +1,17 @@
 ---
-
+// Components
+import Feature from '../components/Feature.astro'
+import Hero from '../components/Hero.astro'
+import Newsletter from '../components/Newsletter'
+import Productive from '../components/Productive.astro'
+import Testimonial from '../components/Testimonial.astro'
+import MainLayout from '../layout/MainLayout.astro'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout>
+  <Hero />
+  <Feature />
+  <Productive />
+  <Testimonial />
+  <Newsletter client:visible />
+</MainLayout>

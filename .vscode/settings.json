@@ -1,0 +1,5 @@
+{
+  "prettier.enable": true,
+  "editor.tabSize": 2,
+  "tailwindCSS.lint.suggestCanonicalClasses": "ignore"
+}

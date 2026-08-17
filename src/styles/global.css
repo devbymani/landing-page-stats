@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+	/* Colors */
+	--color-body: hsl(212 48.39% 6.08%);
+	--color-surface: hsl(220.91 39.29% 10.98%);
+	--color-card: hsl(220.8 32.47% 15.1%);
+	
+	--color-bprimary: hsl(188.62 84.68% 56.47%);
+	--color-bsecondary: hsl(238.78 83.53% 66.67%);
+	--color-accent: hsl(160.12 84.08% 39.41%);
+	
+	--color-tprimary: hsl(210 40% 98.04%);
+	--color-tsecondary: hsl(215 20.22% 65.1%);
+	
+	--color-border: hsl(221.38 25.66% 22.16%);
+	--color-warning: hsl(37.69 92.13% 50.2%);
+	--color-error: hsl(0 84.24% 60.2%);
+	
+	/* Font-Family */
+	--font-primary: 'Open Sans', sans-serif;
+	--font-secondary: 'Raleway', sans-serif;
+	
+	/* Font-Weight */
+	--font-light: 300;
+	--font-normal: 400;
+	--font-medium: 500;
+	--font-semibold: 600;
+	--font-bold: 700;
+	
+	/* Breakpoints */
+	--breakpoints-xs: 24rem;
+	--breakpoints-sm: 36rem;
+	--breakpoints-md: 48rem;
+	--breakpoints-lg: 64rem;
+	--breakpoints-xl: 72rem;
+	--breakpoints-2xl: 90rem;
+}
+
+@utility container {
+	width: 100%;
+	margin-inline: auto;
+	padding-inline: 1rem;
+	
+	@media (min-width: 24rem) {
+		max-width: 24rem;
+	}
+
+	@media (min-width: 36rem) {
+		max-width: 36rem;
+	}
+
+	@media (min-width: 48rem) {
+		max-width: 48rem;
+	}
+
+	@media (min-width: 64rem) {
+		max-width: 64rem;
+	}
+
+	@media (min-width: 72rem) {
+		max-width: 72rem;
+	}
+
+	@media (min-width: 90rem) {
+		max-width: 90rem;
+	}
+}
+
+.section-spacing {
+	@apply mt-16 py-16 md:py-20 lg:py-24;
+}

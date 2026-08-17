@@ -1,0 +1,47 @@
+---
+// Icons
+import 'remixicon/fonts/remixicon.css';
+
+// CSS
+import "../styles/global.css";
+
+// Components
+import Header from "../components/Header.astro";
+import Footer from '../components/Footer.astro';
+
+// Information
+const siteInfo = {
+	title: "Landing Page Tuts",
+	description: "A Landing page website tutorial",
+	icon: "favicon.ico"
+}
+const {
+	title = siteInfo.title,
+	description = siteInfo.description,
+	icon = siteInfo.icon
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href={icon} />
+    <meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description}>
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-white text-slate-800">
+    <Header />
+    <slot />
+    <!-- <Footer /> -->
+    <Footer />
+  </body>
+</html>

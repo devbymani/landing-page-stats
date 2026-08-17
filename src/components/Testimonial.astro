@@ -1,0 +1,62 @@
+---
+// Astro Image Assets
+import { Image } from "astro:assets";
+
+// Images
+import TestimonialQuote from '../assets/testimonial-quote.svg';
+import UserProfile1 from '../assets/profile-1.jpg';
+import UserProfile2 from '../assets/profile-2.jpg';
+import UserProfile3 from '../assets/profile-3.jpg';
+
+// Testimonial Data
+const testimonialData = [
+  {
+    text: 'Fyck has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.',
+    name: 'Broad Smile',
+    image: UserProfile1,
+    position: 'Founder & CEO, Huddie',
+  },
+  {
+    text: 'Fyck has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.',
+    name: 'Olive Green',
+    image: UserProfile2,
+    position: 'Founder & CEO, Huddie',
+  },
+  {
+    text: 'Fyck has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.',
+    name: 'Marymar Kevich',
+    image: UserProfile3,
+    position: 'Founder & CEO, Huddie',
+  },
+]
+---
+
+<section class="my-10 pt-20">
+  <div class="container">
+    <div class="relative z-20 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4">
+      <Image
+        src={TestimonialQuote}
+        alt='Testimonial Quote'
+        class='absolute top-[-2rem] -z-10 size-12'
+      />
+
+      <!-- Testimonial Card -->
+      {testimonialData.map((review)=>(
+        <div class="rounded-lg bg-slate-200 px-6 py-6 mb-8 md:mb-0 space-y-4">
+          <p class="leading-7">{review.text}</p>
+          <div class="flex items-center justify-start gap-4">
+            <Image
+              src={review.image}
+              alt={review.name}
+              class='size-[45px] rounded-full'
+            />
+            <div>
+              <h4 class="font-bold">{review.name}</h4>
+              <span class="text-sm">{review.position}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+{
+  "features": [
+    {
+      "id": 1,
+      "title": "Access your file, anywhere",
+      "description": "The ability to use a smartphone, tablet, or computer to access your account means your files follow you everywhere.",
+      "image": "access-anywhere.svg",
+      "imageAltText": "Featured 1st image"
+    },
+    {
+      "id": 2,
+      "title": "Security you can trust",
+      "description": "2-factor authentication and user-controlled encryption are just a couple of the security features we allow to help secure your files.",
+      "image": "security.svg",
+      "imageAltText": "Featured 2nd image"
+    },
+    {
+      "id": 3,
+      "title": "Real-time Collaboration",
+      "description": "Security share files and folders with friends, family and collegues for live collaboration. No email attachments required.",
+      "image": "collaboration.svg",
+      "imageAltText": "Featured 3rd image"
+    },
+    {
+      "id": 4,
+      "title": "Store any type of file",
+      "description": "Whether you are sharing holidays photos or work documents, Fyck has you covered allowing for all types to be securely stored and shared.",
+      "image": "any-file.svg",
+      "imageAltText": "Featured 4th image"
+    }
+  ]
+}

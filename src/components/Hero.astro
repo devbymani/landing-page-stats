@@ -1,0 +1,42 @@
+---
+// Astro Image
+import { Image } from "astro:assets";
+
+// Images
+import IllustrationHeroImage from '../assets/IllustrationHeroImage.svg';
+---
+
+<section class="relative font-secondary section-spacing !mt-0">
+  <div class="grid grid-cols-2 hero-content container">
+    <div class="content text-center space-y-4">
+      <h1 class="text-3xl md:text-4xl font-semibold">All your files in one secure location, accessible anywhere.</h1>
+      <p>Fyck stores all your most important files in one secure location. Access them wherever you need, share, and collaborate with friends family, and co-workers.</p>
+      <button type="button" class="relative bg-gradient-to-br from-accent-100 to-accent-200 px-4 py-2 rounded-full cursor-pointer hover:from-accent-200 hover:to-accent-100 font-semibold">Get Started</button>
+    </div>
+    <div class="img">
+      <Image src={IllustrationHeroImage} alt="Hero Image"  />
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .hero-bg {
+    background: hsl(217, 28%, 15%) url(../assets/IllustrationHeroImageWave.svg) no-repeat bottom center contain;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 14rem;
+    z-index: -1;
+
+  }
+  @media (min-width: 768px) {
+    .hero-bg {
+      baackground: hsl(217, 28%, 15%) url(../assets/IllustrationHeroImageWave.svg) no-repeat bottom center 100% 280px;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      z-index: 0;
+    }
+  }
+</style>
