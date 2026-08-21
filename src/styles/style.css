@@ -1,0 +1,12 @@
+.nav-dropdown-menu {
+  opacity: 0;
+  transform: translateY(30px);
+  pointer-events: none;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.nav-open .nav-dropdown-menu {
+  opacity: 1;
+  transform: translateY(6px);
+  pointer-events: auto;
+}

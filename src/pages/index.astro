@@ -14,4 +14,41 @@ import MainLayout from '../layout/MainLayout.astro'
   <Productive />
   <Testimonial />
   <Newsletter client:visible />
+
+  <script is:inline>
+    const routes = Array.from(document.querySelectorAll('[data-route]'));
+    const show = (path) => {
+      const clean = path === '/' ? '/' : path;
+      const match = routes.find(r => r.getAttribute('data-route') === clean) || routes[0];
+
+      routes.forEach(r => (r.style.display = 'none'));
+      match.style.display = 'block';
+    };
+
+    show(window.location.pathname);
+
+    window.addEventListener('popstate', () => {
+      show(window.location.pathname);
+    });
+
+    // SPA feel: internal link click => pushState + show()
+    document.addEventListener('click', (e) => {
+      const target = e.target;
+      const a = target instanceof Element ? target.closest('a[href]') : null;
+      if (!a) return;
+
+      const href = a.getAttribute('href');
+      if (!href || href.startsWith('http')) return; // external ignore
+
+      const realRoute = ["/", "/features", "/pricing", "/productive"];
+      if (realRoute.includes(href)) return;
+
+      // only internal clean routes
+      if (href.startsWith('/')) {
+        e.preventDefault();
+        window.history.pushState({}, '', href);
+        show(window.location.pathname);
+      }
+    });
+  </script>
 </MainLayout>

@@ -2,7 +2,7 @@ const Newsletter = () => {
   return (
     <section className="relative">
       <div className="container absolute left-1/2 top-8 -translate-x-1/2 md:top-14">
-        <div className="max-w-[700px] mx-auto rounded-lg bg-slate-100 px-8 py-8 text-center border border-slate-300 shadow">
+        <div className="max-w-[700px] mx-auto rounded-lg bg-slate-100 px-8 py-8 text-center border border-slate-200 shadow-sm">
           <div className="mb-8 space-y-4">
             <h2 className="text-2xl font-bold">Get early access today</h2>
             <p>It only takes a minute to sign up and our free starter tier is extremly generous. If you have any questions, our support team would be happy to help you</p>
@@ -21,7 +21,7 @@ const Newsletter = () => {
               </div>
               <button
                 type="submit"
-                className="relative bg-gradient-to-br from-accent-100 to-accent-200 px-4 py-2 rounded-full cursor-pointer hover:from-accent-200 hover:to-accent-100 font-semibold whitespace-nowrap"
+                className="relative bg-linear-to-br from-bprimary to-bsecondary text-white px-4 py-2 rounded-full cursor-pointer hover:from-accent-200 hover:to-accent-100 font-semibold whitespace-nowrap"
               >
                 Get started for free
               </button>

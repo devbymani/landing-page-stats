@@ -16,7 +16,7 @@ interface Props {
 const { image, imageAltText, title, description } = Astro.props;
 ---
 
-<div class="text-center mb-14 md:mb-0 space-y-4">
+<div class="text-center mb-14 md:mb-0 space-y-4 border border-bprimary/10 rounded-lg shadow-sm p-4 translate-y-0 hover:-translate-y-2 duration-300 transition-transform cursor-default">
   <Image src={image} alt={imageAltText} class='size-[60px] mx-auto object-contain' />
   <div class="space-y-2">
     <h2 class="font-semibold text-xl">{title}</h2>
