@@ -3,14 +3,14 @@
 import Navbar from "./Navbar.astro";
 ---
 
-<header class="bg-white text-slate-800">
-  <div class="flex items-center justify-between py-4 container">
-    <a href="/">
-      <div class="text-2xl flex items-center gap-1">
+<header>
+  <div class="fixed -translate-x-1/2 left-1/2 top-6 w-[calc(100%-1rem)] max-w-6xl flex items-center justify-between px-4 py-2 rounded-lg shadow-sm backdrop-blur-sm z-40 bg-gray-50/50">
+    <div class="flex items-center justify-between w-full">
+      <a href="/" class="flex items-center gap-1 text-2xl">
         <i class="ri-stack-line"></i>
         <span class="font-bold">Fyck</span>
-      </div>
-    </a>
-    <Navbar />
+      </a>
+      <Navbar />
+    </div>
   </div>
 </header>

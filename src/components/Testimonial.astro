@@ -33,7 +33,7 @@ const testimonialData = [
 
 <section class="my-10 pt-20">
   <div class="container">
-    <div class="relative z-20 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4">
+    <div class="relative z-20 md:grid md:grid-cols-3 md:gap-2">
       <Image
         src={TestimonialQuote}
         alt='Testimonial Quote'
@@ -42,7 +42,7 @@ const testimonialData = [
 
       <!-- Testimonial Card -->
       {testimonialData.map((review)=>(
-        <div class="rounded-lg bg-slate-200 px-6 py-6 mb-8 md:mb-0 space-y-4">
+        <div class="rounded-lg bg-slate-100 px-6 py-6 mb-8 md:mb-0 space-y-4 border border-slate-200 shadow-sm">
           <p class="leading-7">{review.text}</p>
           <div class="flex items-center justify-start gap-4">
             <Image

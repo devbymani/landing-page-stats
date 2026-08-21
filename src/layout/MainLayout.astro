@@ -31,6 +31,7 @@ const {
 		<meta name="description" content={description}>
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <link rel="stylesheet" href="/src/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -40,7 +41,9 @@ const {
   </head>
   <body class="bg-white text-slate-800">
     <Header />
-    <slot />
+    <main id="spa-root">
+      <slot />
+    </main>
     <!-- <Footer /> -->
     <Footer />
   </body>

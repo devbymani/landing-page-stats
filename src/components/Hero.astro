@@ -6,15 +6,28 @@ import { Image } from "astro:assets";
 import IllustrationHeroImage from '../assets/IllustrationHeroImage.svg';
 ---
 
-<section class="relative font-secondary section-spacing !mt-0">
-  <div class="grid grid-cols-2 hero-content container">
-    <div class="content text-center space-y-4">
-      <h1 class="text-3xl md:text-4xl font-semibold">All your files in one secure location, accessible anywhere.</h1>
-      <p>Fyck stores all your most important files in one secure location. Access them wherever you need, share, and collaborate with friends family, and co-workers.</p>
-      <button type="button" class="relative bg-gradient-to-br from-accent-100 to-accent-200 px-4 py-2 rounded-full cursor-pointer hover:from-accent-200 hover:to-accent-100 font-semibold">Get Started</button>
+<section data-route="/" id="route-home" class="relative font-secondary section-spacing !mt-0">
+  <div class="grid grid-cols-2 gap-2 hero-content container">
+    <div class="flex items-center flex-col justify-center content text-center space-y-4">
+      <h1 class="text-3xl md:text-4xl font-semibold">Store, Share & Manage Your Files — Securely, Anywhere</h1>
+      <p>Keep your team's files organized, protected, and accessible from anywhere. Collaborate securely without the complexity of traditional file storage.</p>
+      <div class="flex items-center justify-center gap-2">
+        <button
+          type="button"
+          class="relative bg-linear-to-br from-bprimary to-bsecondary text-white px-4 py-2 rounded-full cursor-pointer"
+          onclick="window.location.href='/features'">
+          Get Started
+        </button>
+        <button
+          type="button"
+          class="relative bg-slate-100 px-4 py-2 rounded-full cursor-pointer"
+          onclick="window.location.href='/'">
+          How It Works!
+        </button>
+      </div>
     </div>
-    <div class="img">
-      <Image src={IllustrationHeroImage} alt="Hero Image"  />
+    <div class="img flex items-center justify-center relative">
+      <Image src={IllustrationHeroImage} alt="Hero Image" class="w-96 h-96" />
     </div>
   </div>
 </section>
@@ -31,7 +44,7 @@ import IllustrationHeroImage from '../assets/IllustrationHeroImage.svg';
   }
   @media (min-width: 768px) {
     .hero-bg {
-      baackground: hsl(217, 28%, 15%) url(../assets/IllustrationHeroImageWave.svg) no-repeat bottom center 100% 280px;
+      background: hsl(217, 28%, 15%) url(../assets/IllustrationHeroImageWave.svg) no-repeat bottom center 100% 280px;
       width: 100%;
       height: 100%;
       position: absolute;
